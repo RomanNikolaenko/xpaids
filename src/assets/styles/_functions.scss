@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function rem($value) {
+  $remValue: math.div($value, 17) + rem;
+  @return $remValue;
+}
+
+@function em($value) {
+  $emValue: math.div($value, 17) + em;
+  @return $emValue;
+}

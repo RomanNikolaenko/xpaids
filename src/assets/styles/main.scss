@@ -1,0 +1,32 @@
+:root {
+  --base: #111111;
+  --white: #ffffff;
+
+  --padding: 20px;
+  --mainFonts: "SF UI Display";
+}
+
+@import "./fonts";
+@import "./reset";
+
+.container {
+  width: 100%;
+  padding: 0 var(--padding);
+  margin: 0 auto;
+
+  @media (min-width: 320px) {
+    max-width: 440px;
+  }
+
+  @media (min-width: 480px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 640px) {
+    max-width: 350px;
+  }
+
+  @media (min-width: 960px) {
+    max-width: 470px;
+  }
+}
