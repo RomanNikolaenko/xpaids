@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,41 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   width = 0;
   height = 0;
+  public createForm!: FormGroup;
 
   ngOnInit(): void {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
     this.property(this.width, this.height);
+
+    this.stateForm();
+  }
+
+  stateForm() {
+    this.createForm = new FormGroup({
+      firstName: new FormControl(null, [
+        Validators.required,
+      ]),
+      lastName: new FormControl(null, [
+        Validators.required,
+      ]),
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.email,
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+      ]),
+      passwordConfirm: new FormControl(null, [
+        Validators.required,
+      ]),
+      promocode: new FormControl(null, [
+        Validators.required,
+      ]),
+    });
+
+    console.log(this.createForm);
   }
 
   @HostListener('window:resize', ['$event'])

@@ -1,6 +1,10 @@
 :root {
-  --base: #111111;
+  --primary: #1d1d1f;
   --white: #ffffff;
+  --blue: #007aff;
+  --error: #d66262;
+  --secondary: #bdbdbd;
+  --bgButton: linear-gradient(70.6deg, #b721ff 0%, #4e57bc 48.2%, #21d4fd 100%);
 
   --padding: 20px;
   --mainFonts: "SF UI Display";
@@ -8,26 +12,3 @@
 
 @import "./fonts";
 @import "./reset";
-
-.container {
-  width: 100%;
-  max-width: 320px;
-  padding: 0 var(--padding);
-  margin: 0 auto;
-
-  @media (min-width: 480px) {
-    max-width: 480px;
-  }
-
-  @media (min-width: 640px) {
-    max-width: 440px;
-  }
-
-  @media (min-width: 960px) {
-    max-width: 390px;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 510px;
-  }
-}

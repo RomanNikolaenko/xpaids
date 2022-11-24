@@ -22,7 +22,7 @@ body {
   font-size: inherit;
   line-height: inherit;
   font-family: inherit;
-  color: var(--base);
+  color: var(--primary);
   min-height: 100vh;
   background-color: inherit;
   overflow-x: hidden;
@@ -343,7 +343,7 @@ input:-webkit-autofill:active {
 
 ::selection {
   color: #fff;
-  background-color: var(--base);
+  background-color: var(--primary);
 }
 
 input::-webkit-outer-spin-button,

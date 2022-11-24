@@ -21,27 +21,79 @@
       </div>
     </div>
 
-    <form class="create-account__form form">
+    <form [formGroup]="createForm" class="create-account__form form">
       <fieldset class="form__group">
-        <label class="form__label">
-          <input type="text" class="form__input" id="firstName" name="firstName" placeholder="First name"/>
+        <label class="form__field">
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            class="form__input"
+            required
+          />
+          <span class="form__title">First name</span>
+          <span *ngIf="false" class="form__error">Enter a First name</span>
         </label>
 
-        <label class="form__label">
-          <input type="text" class="form__input" id="lastName" name="lastName" placeholder="Last name" />
+        <label class="form__field">
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            class="form__input"
+            required
+          />
+          <span class="form__title">Last name</span>
+          <span *ngIf="false" class="form__error">Enter a Last name</span>
         </label>
 
-        <label class="form__label">
-          <input type="email" class="form__input" id="email" name="email" placeholder="Email"/>
+        <label class="form__field">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form__input"
+            required
+          />
+          <span class="form__title">Email</span>
+          <span *ngIf="false" class="form__error">Please enter a valid email</span>
           <span class="form__hint">This will be your new xPaids ID</span>
         </label>
 
-        <label class="form__label">
-          <input type="password" class="form__input" id="password" name="password" placeholder="Password" />
+        <label class="form__field">
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form__input"
+            required
+          />
+          <span class="form__title">Password</span>
         </label>
 
-        <label class="form__label">
-          <input type="password" class="form__input" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password" />
+        <label class="form__field">
+          <input
+            type="password"
+            id="passwordConfirm"
+            formControlName="passwordConfirm"
+            class="form__input"
+            required
+          />
+          <span class="form__title">Confirm password</span>
+          <span *ngIf="false" class="form__error">Please confirm password</span>
+        </label>
+
+        <label class="form__field">
+          <input
+            type="number"
+            id="promocode"
+            formControlName="promocode"
+            class="form__input"
+            required
+          />
+          <span class="form__title">Promocode</span>
+          <span *ngIf="false" class="form__error">error</span>
+          <button class="form__promocode">Info</button>
         </label>
       </fieldset>
 
