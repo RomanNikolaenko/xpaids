@@ -122,8 +122,8 @@
 
   &__promocode {
     position: absolute;
-    top: 50%;
-    right: 17px;
+    top: functions.rem(28);
+    right: functions.rem(17);
     width: 20px;
     height: 20px;
     transform: translateY(-50%);
@@ -145,7 +145,7 @@
     }
 
     &:focus,
-    &:valid {
+    .form__field-touched & {
       + .form__title {
         font-size: functions.rem(11);
         line-height: functions.rem(13);
@@ -184,6 +184,7 @@
     line-height: calc(16 / 14);
     margin-top: functions.rem(8);
     letter-spacing: functions.rem(0.05);
+    transition: all 0.3s linear;
 
     &::before {
       content: "";
@@ -215,6 +216,10 @@
     font-weight: 500;
     letter-spacing: functions.rem(-0.3);
     color: var(--white);
+
+    &:disabled {
+      opacity: 0.4;
+    }
   }
 
   a {

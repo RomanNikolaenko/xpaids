@@ -40,10 +40,17 @@ export class AppComponent {
       ]),
       promocode: new FormControl(null, [
         Validators.required,
+        Validators.minLength(6),
       ]),
     });
 
     console.log(this.createForm);
+  }
+
+  onSubmit() {
+    if (this.createForm.invalid) {
+      return;
+    }
   }
 
   @HostListener('window:resize', ['$event'])
