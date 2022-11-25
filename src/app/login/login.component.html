@@ -1,0 +1,99 @@
+<div class="login">
+  <div class="login__container container">
+    <img
+      class="login__img"
+      src="../../assets/logo.svg"
+      width="48"
+      height="48"
+      alt="logo"
+    />
+
+    <div class="login__content">
+      <h2 class="login__title">Login</h2>
+
+      <div class="login__description">
+        <p class="login__subtitle">Sign In to xPaids Banking Metaverse.</p>
+        <p class="login__subtitle">
+          Don’t have an account? <a routerLink="/create">Create account</a>
+        </p>
+      </div>
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="create-account__form form"
+    >
+      <fieldset class="form__group" [ngClass]="[xpaids ? 'form__group-dubble' : '']">
+        <label
+          [ngClass]="[
+            loginForm.get('id')?.dirty &&
+            loginForm.get('id')?.value != null &&
+            loginForm.get('id')?.value != ''
+              ? 'form__field-touched'
+              : '',
+
+            loginForm.get('id')?.errors && loginForm.get('id')?.dirty
+              ? 'form__field-error'
+              : ''
+          ]"
+          class="form__field"
+        >
+          <input type="text" formControlName="id" class="form__input" />
+          <span class="form__title">xPaids ID</span>
+          <span
+            *ngIf="loginForm.get('id')?.errors && loginForm.get('id')?.dirty"
+            class="form__error"
+            >Enter a xPaids ID</span
+          >
+          <button *ngIf="!xpaids" (click)="xpaidsBtn()" class="form__xpaid">Info</button>
+        </label>
+        <label
+        *ngIf="xpaids"
+          [ngClass]="[
+            loginForm.get('password')?.dirty &&
+            loginForm.get('password')?.value != null &&
+            loginForm.get('password')?.value != ''
+              ? 'form__field-touched'
+              : '',
+
+            loginForm.get('password')?.errors && loginForm.get('password')?.dirty
+              ? 'form__field-error'
+              : ''
+          ]"
+          class="form__field"
+        >
+          <input type="text" formControlName="password" class="form__input" />
+          <span class="form__title">Password</span>
+          <span
+            *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.dirty"
+            class="form__error"
+            >Enter a password</span
+          >
+          <button class="form__xpaid">Info</button>
+        </label>
+      </fieldset>
+
+      <label class="form__checkmark checkmark">
+        <input class="checkmark__input" type="checkbox" name="checkbox" />
+        <i class="checkmark__checkbox"></i>
+
+        Remember ID
+      </label>
+    </form>
+
+    <div class="forgot">
+      <a routerLink="/" class="forgot__link">Forgot password?</a>
+    </div>
+
+    <div class="sign-in-with">
+      <h3 class="sign-in-with__title"><span>Sign in with</span></h3>
+
+      <div class="sign-in-with__wrap">
+        <a href="/" class="sign-in-with__link sign-in-with__link-google">google</a>
+        <a href="/" class="sign-in-with__link sign-in-with__link-apple">apple</a>
+        <a href="/" class="sign-in-with__link sign-in-with__link-facebook">facebook</a>
+      </div>
+    </div>
+  </div>
+</div>

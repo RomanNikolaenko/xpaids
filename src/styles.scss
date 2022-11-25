@@ -1,1 +1,14 @@
 @import "./assets/styles/main.scss";
+
+app-root,
+app-login,
+app-create {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+app-login,
+app-create {
+  justify-content: center;
+}
