@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ModalService } from './verify-email/verify-email.service';
 
 @Component({
   selector: 'app-create',
@@ -8,9 +9,24 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreateComponent implements OnInit {
   public createForm!: FormGroup;
+  public open: boolean = false;
+  public newCode: boolean = false;
+  public seconds: number = 15;
+
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.stateForm();
+  }
+
+  openModal() {
+    this.modalService.open();
+    this.open = !this.open;
+  }
+
+  close() {
+    this.modalService.close();
+    this.open = !this.open;
   }
 
   stateForm(): void {
@@ -31,5 +47,19 @@ export class CreateComponent implements OnInit {
     if (this.createForm.invalid) {
       return;
     }
+  }
+
+  sendButton(): void {
+    this.newCode = !this.newCode;
+
+    const timer = setInterval(() => {
+      this.seconds--;
+    }, 1000);
+
+    setTimeout(() => {
+      this.newCode = !this.newCode;
+      this.seconds = 15;
+      clearInterval(timer);
+    }, 15000);
   }
 }

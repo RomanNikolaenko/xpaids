@@ -30,7 +30,7 @@
         <label
           [ngClass]="[
             createForm.get('firstName')?.dirty &&
-            createForm.get('firstName')?.value != null && 
+            createForm.get('firstName')?.value != null &&
             createForm.get('firstName')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -62,7 +62,7 @@
         <label
           [ngClass]="[
             createForm.get('lastName')?.dirty &&
-            createForm.get('lastName')?.value != null && 
+            createForm.get('lastName')?.value != null &&
             createForm.get('lastName')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -94,7 +94,7 @@
         <label
           [ngClass]="[
             createForm.get('email')?.dirty &&
-            createForm.get('email')?.value != null && 
+            createForm.get('email')?.value != null &&
             createForm.get('email')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -125,7 +125,7 @@
         <label
           [ngClass]="[
             createForm.get('password')?.dirty &&
-            createForm.get('password')?.value != null && 
+            createForm.get('password')?.value != null &&
             createForm.get('password')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -150,13 +150,14 @@
               createForm.get('password')?.dirty
             "
             class="form__error"
-            >Please enter password</span>
+            >Please enter password</span
+          >
         </label>
 
         <label
           [ngClass]="[
             createForm.get('passwordConfirm')?.dirty &&
-            createForm.get('passwordConfirm')?.value != null && 
+            createForm.get('passwordConfirm')?.value != null &&
             createForm.get('passwordConfirm')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -189,7 +190,7 @@
           class="form__field"
           [ngClass]="[
             createForm.get('promocode')?.dirty &&
-            createForm.get('promocode')?.value != null && 
+            createForm.get('promocode')?.value != null &&
             createForm.get('promocode')?.value != ''
               ? 'form__field-touched'
               : '',
@@ -215,11 +216,20 @@
             class="form__error"
             >error</span
           >
-          <button class="form__promocode">Info</button>
+          <div class="form__promocode promocode">
+            <button class="promocode__btn">Info</button>
+
+            <div class="promocode__prompt prompt">
+              You can request a promocode from any xPaids user for a better
+              rate.
+            </div>
+          </div>
         </label>
       </fieldset>
 
-      <p class="form__login">Already have an account? <a routerLink="/login">Log in</a></p>
+      <p class="form__login">
+        Already have an account? <a routerLink="/login">Log in</a>
+      </p>
 
       <label class="form__checkmark checkmark">
         <input class="checkmark__input" type="checkbox" name="checkbox" />
@@ -228,7 +238,87 @@
         I agree with our <a href="/">Terms</a> and <a href="/">Conditions</a>
       </label>
 
-      <button class="form__submit" type="submit" [disabled]="createForm.invalid">Continue</button>
+      <button
+        class="btn btn__continue"
+        type="submit"
+        (click)="openModal()"
+        [disabled]="createForm.invalid"
+      >
+        Continue
+      </button>
     </form>
   </div>
 </div>
+
+<app-verify-email *ngIf="open">
+  <div class="modal">
+    <div class="modal__container">
+      <img
+        class="modal__img"
+        src="../../assets//email.svg"
+        width="65"
+        height="51"
+        alt="email"
+      />
+
+      <h2 class="modal__title">Verify email to create new xPaids ID.</h2>
+
+      <p class="modal__subtitle">
+        An email with a verification code has been sent to:
+        <span>xpaids@email.com</span>
+      </p>
+
+      <p class="modal__subtitle">Enter the code here:</p>
+
+      <div class="modal__inputs">
+        <!-- Потрібно для input добавляти класс в залежности від валідації
+        access - modal__input-access
+        error - modal__input-error -->
+        <input
+          type="number"
+          class="modal__input modal__input-access"
+          value="1"
+        />
+        <input
+          type="number"
+          class="modal__input modal__input-error"
+          value="3"
+        />
+        <input type="number" class="modal__input" />
+        <input type="number" class="modal__input" />
+        <input type="number" class="modal__input" />
+        <input type="number" class="modal__input" />
+
+        <!-- Якщо error то показувати блок -->
+        <span *ngIf="false" class="modal__error">Code is incorrect</span>
+      </div>
+
+      <div class="get-email">
+        <button class="get-email__btn">Didn’t get an email?</button>
+
+        <div class="get-email__prompt prompt">
+          You can check spam folder or wait a few minutes. If you’re still
+          having trouble, you can request a new code.
+        </div>
+      </div>
+
+      <div class="modal__btns">
+        <button class="modal__send" (click)="sendButton()">
+          <span class="modal__send-seconds" *ngIf="newCode"
+            ><i>00:{{ seconds }}</i> for a new code</span
+          >
+          <span class="modal__send-new" *ngIf="!newCode">Send a new code</span>
+        </button>
+
+        <div class="modal__wrap">
+          <button class="btn btn__cancel" (click)="close()">
+            <span>Cancel</span>
+          </button>
+          <button disabled class="btn btn__continue">
+            <span>Continue</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-verify-email>

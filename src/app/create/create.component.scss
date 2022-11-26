@@ -2,7 +2,6 @@
 
 .container {
   width: 100%;
-  max-width: 320px;
   padding: 0 var(--padding);
   margin: 0 auto;
 
@@ -115,24 +114,6 @@
     }
   }
 
-  &__promocode {
-    position: absolute;
-    top: functions.rem(28);
-    right: functions.rem(17);
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    mask-image: url("../../assets/questionmarkcircle.svg");
-    mask-position: center center;
-    mask-size: 100% 100%;
-    background-color: #8a8a8e;
-    font-size: 0;
-
-    .form__field-error & {
-      background-color: var(--error);
-    }
-  }
-
   &__input {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: functions.rem(3);
@@ -209,20 +190,6 @@
     }
   }
 
-  &__submit {
-    text-align: center;
-    padding: functions.rem(4) functions.rem(14);
-    background-image: var(--bgButton);
-    border-radius: functions.rem(20);
-    font-weight: 500;
-    letter-spacing: functions.rem(-0.3);
-    color: var(--white);
-
-    &:disabled {
-      opacity: 0.4;
-    }
-  }
-
   a {
     color: var(--blue);
   }
@@ -273,5 +240,265 @@
         }
       }
     }
+  }
+}
+
+.promocode {
+  position: absolute;
+  top: functions.rem(28);
+  right: functions.rem(17);
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    mask-image: url("../../assets/questionmarkcircle.svg");
+    mask-position: center center;
+    mask-size: 100% 100%;
+    background-color: #8a8a8e;
+    font-size: 0;
+
+    &:hover {
+      & + .promocode__prompt {
+        opacity: 1;
+        top: -8px;
+        visibility: visible;
+      }
+    }
+
+    .form__field-error & {
+      background-color: var(--error);
+    }
+  }
+
+  &__prompt {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 230px;
+
+    @media (max-width: 639.98px) {
+      transform: translate(-83%, -100%);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(29, 29, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 250ms ease-in;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: functions.rem(12);
+    padding: functions.rem(68) functions.rem(24) functions.rem(48);
+    width: calc(100% - var(--padding) * 2);
+    margin: 0 auto;
+
+    @media (min-width: 640px) {
+      max-width: 448px;
+    }
+
+    @media (min-width: 960px) {
+      max-width: 450px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 470px;
+    }
+  }
+
+  &__img {
+    width: 65px;
+    height: 51px;
+    margin-bottom: functions.rem(46);
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: calc(19 / 17);
+    text-align: center;
+    max-width: functions.rem(300);
+    margin-bottom: functions.rem(18);
+    color: var(--primary);
+    letter-spacing: functions.rem(-0.3);
+
+    @media (min-width: 480px) {
+      font-size: functions.rem(27);
+      line-height: calc(32 / 27);
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    line-height: calc(20 / 17);
+    text-align: center;
+    letter-spacing: functions.rem(-0.3);
+    color: rgba(60, 60, 67, 0.6);
+    margin-bottom: functions.rem(12);
+
+    @media (max-width: 479.98px) {
+      font-size: functions.rem(15);
+      line-height: 1.25;
+    }
+
+    &:not(:nth-of-type(1)) {
+      margin-top: functions.rem(12);
+    }
+
+    span {
+      display: block;
+      color: var(--primary);
+      margin-top: functions.rem(8);
+      letter-spacing: 0;
+    }
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: repeat(6, 42px);
+    align-items: center;
+    gap: 0 functions.rem(12);
+    margin-bottom: functions.rem(24);
+
+    @media (max-width: 479.98px) {
+      grid-template-columns: repeat(6, 32px);
+      gap: 0 functions.rem(8);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: functions.rem(10) functions.rem(4);
+    text-align: center;
+    transition: all 0.25s linear;
+
+    @media (max-width: 479.98px) {
+      padding: functions.rem(5) functions.rem(4);
+    }
+
+    &-access {
+      background-color: rgba(52, 199, 89, 0.1);
+      border-color: #62d669;
+    }
+
+    &-error {
+      background-color: rgba(214, 98, 98, 0.1);
+      border-color: var(--error);
+      color: var(--error);
+    }
+  }
+
+  &__send {
+    letter-spacing: functions.rem(-0.4);
+
+    &-seconds {
+      font-weight: 400;
+      font-size: functions.rem(13);
+      line-height: calc(18 / 13);
+      color: rgba(189, 189, 189, 1);
+
+      i {
+        display: inline-block;
+        font-style: normal;
+        color: rgba(138, 138, 142, 1);
+        margin-right: functions.rem(3);
+      }
+    }
+
+    &-new {
+      line-height: calc(18 / 17);
+      color: var(--blue);
+    }
+  }
+
+  &__error {
+    display: flex;
+    justify-content: center;
+    grid-column: 1/-1;
+    color: var(--error);
+    font-weight: 400;
+    font-size: functions.rem(12.5);
+    line-height: calc(16 / 14);
+    margin-top: functions.rem(8);
+    letter-spacing: functions.rem(0.05);
+    transition: all 0.3s linear;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-image: url("../../assets/exclamationmarkcircle.svg");
+      background-size: 100% 100%;
+      margin-right: functions.rem(5);
+    }
+  }
+
+  &__btns,
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: functions.rem(24) functions.rem(18);
+  }
+
+  &__wrap {
+    justify-content: center;
+  }
+
+  &__btns {
+    width: 100%;
+    justify-content: space-between;
+
+    @media (max-width: 479.98px) {
+      justify-content: center;
+    }
+  }
+}
+
+.get-email {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__btn {
+    line-height: calc(18 / 17);
+    letter-spacing: functions.rem(-0.4);
+    color: var(--blue);
+    margin-bottom: functions.rem(30);
+
+    &:focus {
+      & + .get-email__prompt {
+        top: -8px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__prompt {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 268px;
   }
 }
