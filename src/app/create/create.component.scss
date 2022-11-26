@@ -118,7 +118,7 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: functions.rem(3);
     width: 100%;
-    color: var(--primary);
+    color: var(--primary-txt);
     padding: functions.rem(25.5) functions.rem(14) functions.rem(8);
 
     .form__field-error & {
@@ -191,7 +191,7 @@
   }
 
   a {
-    color: var(--blue);
+    color: var(--primary);
   }
 }
 
@@ -258,7 +258,7 @@
     mask-image: url("../../assets/questionmarkcircle.svg");
     mask-position: center center;
     mask-size: 100% 100%;
-    background-color: #8a8a8e;
+    background-color: var(--secondary-txt);
     font-size: 0;
 
     &:hover {
@@ -334,7 +334,7 @@
     text-align: center;
     max-width: functions.rem(300);
     margin-bottom: functions.rem(18);
-    color: var(--primary);
+    color: var(--primary-txt);
     letter-spacing: functions.rem(-0.3);
 
     @media (min-width: 480px) {
@@ -362,7 +362,7 @@
 
     span {
       display: block;
-      color: var(--primary);
+      color: var(--primary-txt);
       margin-top: functions.rem(8);
       letter-spacing: 0;
     }
@@ -384,7 +384,7 @@
   &__input {
     width: 100%;
     height: 100%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-input);
     border-radius: 4px;
     padding: functions.rem(10) functions.rem(4);
     text-align: center;
@@ -425,7 +425,7 @@
 
     &-new {
       line-height: calc(18 / 17);
-      color: var(--blue);
+      color: var(--primary);
     }
   }
 
@@ -483,7 +483,7 @@
   &__btn {
     line-height: calc(18 / 17);
     letter-spacing: functions.rem(-0.4);
-    color: var(--blue);
+    color: var(--primary);
     margin-bottom: functions.rem(30);
 
     &:focus {

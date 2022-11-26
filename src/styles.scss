@@ -2,13 +2,17 @@
 
 app-root,
 app-login,
-app-create {
+app-create,
+app-confirmed,
+app-verify {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
 }
 
 app-login,
-app-create {
+app-create,
+app-confirmed,
+app-verify {
   justify-content: center;
 }

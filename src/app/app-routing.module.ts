@@ -14,6 +14,14 @@ const routes: Routes = [
     path: 'create',
     loadChildren: () => import('./create/create.module').then((m) => m.CreateModule),
   },
+  {
+    path: 'confirmed',
+    loadChildren: () => import('./confirmed/confirmed.module').then((m) => m.ConfirmedModule),
+  },
+  {
+    path: 'verify',
+    loadChildren: () => import('./verify/verify.module').then((m) => m.VerifyModule),
+  },
 ];
 
 @NgModule({

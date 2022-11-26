@@ -70,7 +70,7 @@
     color: rgba(60, 60, 67, 0.6);
 
     a {
-      color: var(--blue);
+      color: var(--primary);
     }
   }
 }
@@ -188,10 +188,10 @@
   }
 
   &__input {
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-input);
     border-radius: functions.rem(12);
     width: 100%;
-    color: var(--primary);
+    color: var(--primary-txt);
     padding: functions.rem(25.5) functions.rem(14) functions.rem(8);
 
     .form__field-error & {
@@ -247,7 +247,7 @@
   &__submit {
     text-align: center;
     padding: functions.rem(4) functions.rem(14);
-    background-image: var(--bgButton);
+    background-image: var(--bg2);
     border-radius: functions.rem(20);
     font-weight: 500;
     letter-spacing: functions.rem(-0.3);
@@ -259,7 +259,7 @@
   }
 
   a {
-    color: var(--blue);
+    color: var(--primary);
   }
 }
 
@@ -268,7 +268,7 @@
     font-weight: 400;
     line-height: calc(18 / 17);
     letter-spacing: functions.rem(-0.35);
-    color: var(--blue);
+    color: var(--primary);
   }
 }
 
@@ -283,7 +283,7 @@
     line-height: calc(18 / 15);
     letter-spacing: functions.rem(-0.2);
     text-align: center;
-    color: #8a8a8e;
+    color: var(--secondary-txt);
     margin-bottom: functions.rem(30);
 
     &::before {
@@ -294,7 +294,7 @@
       transform: translateY(-50%);
       width: 100%;
       height: 1px;
-      background-color: #e0e0e0;
+      background-color: var(--border-input);
     }
 
     span {
@@ -316,7 +316,7 @@
     padding: functions.rem(16);
     width: functions.rem(52);
     height: functions.rem(52);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-input);
     border-radius: functions.rem(12);
     font-size: 0;
     background-position: center center;

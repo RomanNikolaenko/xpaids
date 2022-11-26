@@ -1,10 +1,16 @@
 :root {
-  --primary: #1d1d1f;
-  --white: #ffffff;
-  --blue: #007aff;
   --error: #d66262;
-  --secondary: #bdbdbd;
-  --bgButton: linear-gradient(70.6deg, #b721ff 0%, #4e57bc 48.2%, #21d4fd 100%);
+  --ok: #62d669;
+  --primary: #007aff;
+  --primary-txt: #1d1d1f;
+  --border-input: #e0e0e0;
+  --border-active: #63a5ff;
+  --secondary-txt: #8a8a8e;
+  --secondary-input: #bdbdbd;
+  --white: #ffffff;
+
+  --bg1: linear-gradient(81.79deg, #ebd300 6.79%, #ff845e 45.63%, #ff94e1 83.66%);
+  --bg2: linear-gradient(70.6deg, #b721ff 0%, #4e57bc 48.2%, #21d4fd 100%);
 
   --padding: 20px;
   --mainFonts: "SF UI Display";
@@ -27,7 +33,7 @@
 
   &__cancel {
     background-color: #ececec;
-    color: #8a8a8e;
+    color: var(--secondary-txt);
   }
 
   &__continue {
@@ -46,7 +52,7 @@
     }
 
     &::before {
-      background-image: var(--bgButton);
+      background-image: var(--bg2);
     }
 
     &::after {
@@ -81,14 +87,14 @@
   position: absolute;
   padding: 16px 18px;
   background-color: #f8f8f8;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-input);
   border-radius: 8px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   letter-spacing: -0.2px;
   text-align: center;
-  color: #8a8a8e;
+  color: var(--secondary-txt);
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s linear;
