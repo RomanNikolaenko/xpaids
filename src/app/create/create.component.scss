@@ -286,19 +286,7 @@
   }
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-color: rgba(29, 29, 31, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 250ms ease-in;
-
+.modal-email {
   &__container {
     display: flex;
     flex-direction: column;
@@ -309,7 +297,7 @@
     width: calc(100% - var(--padding) * 2);
     margin: 0 auto;
 
-    @media (min-width: 640px) {
+    @media (min-width: 480px) {
       max-width: 448px;
     }
 

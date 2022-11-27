@@ -1,1 +1,5 @@
-<ng-content></ng-content>
+<div *ngIf="visible" [@overlay] class="overlay"></div>
+
+<div *ngIf="visible" [@dialog] class="modal">
+  <ng-content></ng-content>
+</div>

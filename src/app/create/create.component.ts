@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ModalService } from '../components/modal/modal.service';
 
 @Component({
   selector: 'app-create',
@@ -9,24 +8,27 @@ import { ModalService } from '../components/modal/modal.service';
 })
 export class CreateComponent implements OnInit {
   public createForm!: FormGroup;
-  public open: boolean = false;
   public newCode: boolean = false;
   public seconds: number = 15;
-
-  constructor(private modalService: ModalService) {}
+  showDialog = false;
 
   ngOnInit(): void {
     this.stateForm();
   }
 
   openModal() {
-    this.modalService.open();
-    this.open = !this.open;
+    const lockMarginValue =
+      window.innerWidth - document.body.offsetWidth + 'px';
+
+    this.showDialog = !this.showDialog;
+    document.body.classList.add('lock');
+    document.body.style.marginRight = lockMarginValue;
   }
 
-  close() {
-    this.modalService.close();
-    this.open = !this.open;
+  closeModal() {
+    this.showDialog = !this.showDialog;
+    document.body.classList.remove('lock');
+    document.body.style.marginRight = '';
   }
 
   stateForm(): void {

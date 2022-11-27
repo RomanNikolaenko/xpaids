@@ -250,74 +250,72 @@
   </div>
 </div>
 
-<app-modal *ngIf="open">
-  <div class="modal">
-    <div class="modal__container">
-      <img
-        class="modal__img"
-        src="../../assets//email.svg"
-        width="65"
-        height="51"
-        alt="email"
+<app-modal [(visible)]="showDialog" class="modal-email">
+  <div class="modal-email__container">
+    <img
+      class="modal-email__img"
+      src="../../assets//email.svg"
+      width="65"
+      height="51"
+      alt="email"
+    />
+
+    <h2 class="modal-email__title">Verify email to create new xPaids ID.</h2>
+
+    <p class="modal-email__subtitle">
+      An email with a verification code has been sent to:
+      <span>xpaids@email.com</span>
+    </p>
+
+    <p class="modal-email__subtitle">Enter the code here:</p>
+
+    <div class="modal-email__inputs">
+      <!-- Потрібно для input добавляти класс в залежности від валідації
+        access - modal-email__input-access
+        error - modal-email__input-error -->
+      <input
+        type="number"
+        class="modal-email__input modal-email__input-access"
+        value="1"
       />
+      <input
+        type="number"
+        class="modal-email__input modal-email__input-error"
+        value="3"
+      />
+      <input type="number" class="modal-email__input" />
+      <input type="number" class="modal-email__input" />
+      <input type="number" class="modal-email__input" />
+      <input type="number" class="modal-email__input" />
 
-      <h2 class="modal__title">Verify email to create new xPaids ID.</h2>
+      <!-- Якщо error то показувати блок -->
+      <span *ngIf="false" class="modal-email__error">Code is incorrect</span>
+    </div>
 
-      <p class="modal__subtitle">
-        An email with a verification code has been sent to:
-        <span>xpaids@email.com</span>
-      </p>
+    <div class="get-email">
+      <button class="get-email__btn">Didn’t get an email?</button>
 
-      <p class="modal__subtitle">Enter the code here:</p>
-
-      <div class="modal__inputs">
-        <!-- Потрібно для input добавляти класс в залежности від валідації
-        access - modal__input-access
-        error - modal__input-error -->
-        <input
-          type="number"
-          class="modal__input modal__input-access"
-          value="1"
-        />
-        <input
-          type="number"
-          class="modal__input modal__input-error"
-          value="3"
-        />
-        <input type="number" class="modal__input" />
-        <input type="number" class="modal__input" />
-        <input type="number" class="modal__input" />
-        <input type="number" class="modal__input" />
-
-        <!-- Якщо error то показувати блок -->
-        <span *ngIf="false" class="modal__error">Code is incorrect</span>
+      <div class="get-email__prompt prompt">
+        You can check spam folder or wait a few minutes. If you’re still
+        having trouble, you can request a new code.
       </div>
+    </div>
 
-      <div class="get-email">
-        <button class="get-email__btn">Didn’t get an email?</button>
+    <div class="modal-email__btns">
+      <button class="modal-email__send" (click)="sendButton()">
+        <span class="modal-email__send-seconds" *ngIf="newCode"
+          ><i>00:{{ seconds }}</i> for a new code</span
+        >
+        <span class="modal-email__send-new" *ngIf="!newCode">Send a new code</span>
+      </button>
 
-        <div class="get-email__prompt prompt">
-          You can check spam folder or wait a few minutes. If you’re still
-          having trouble, you can request a new code.
-        </div>
-      </div>
-
-      <div class="modal__btns">
-        <button class="modal__send" (click)="sendButton()">
-          <span class="modal__send-seconds" *ngIf="newCode"
-            ><i>00:{{ seconds }}</i> for a new code</span
-          >
-          <span class="modal__send-new" *ngIf="!newCode">Send a new code</span>
+      <div class="modal-email__wrap">
+        <button class="btn btn__cancel" (click)="closeModal()">
+          <span>Cancel</span>
         </button>
-
-        <div class="modal__wrap">
-          <button class="btn btn__cancel" (click)="close()">
-            <span>Cancel</span>
-          </button>
-          <button disabled class="btn btn__continue">
-            <span>Continue</span>
-          </button>
-        </div>
+        <button disabled class="btn btn__continue">
+          <span>Continue</span>
+        </button>
       </div>
     </div>
   </div>
