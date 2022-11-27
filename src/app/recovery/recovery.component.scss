@@ -1,0 +1,157 @@
+@use "../../assets/styles/functions" as functions;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 640px) {
+    max-width: 488px;
+  }
+
+  @media (min-width: 960px) {
+    max-width: 490px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 510px;
+  }
+}
+
+.recovery {
+  &__container {
+    padding: functions.rem(70) functions.rem(20);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: functions.rem(12);
+    margin-bottom: functions.rem(50);
+  }
+
+  &__logo {
+    width: functions.rem(98);
+  }
+
+  &__sign {
+    color: var(--primary);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: functions.rem(34);
+    line-height: calc(41 / 34);
+    margin-bottom: functions.rem(30);
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: functions.rem(54) 1fr;
+    gap: functions.rem(24);
+    padding-top: functions.rem(20);
+    border-top: 1px solid var(--border-input);
+  }
+
+  &__description {
+    font-size: functions.rem(13);
+    line-height: calc(18 / 13);
+    letter-spacing: functions.rem(-0.2);
+    color: var(--secondary-txt);
+  }
+}
+
+.form {
+  margin-bottom: functions.rem(40);
+
+  &__label {
+    font-size: functions.rem(13);
+    line-height: calc(16 / 13);
+    margin-bottom: functions.rem(12);
+    color: var(--secondary-txt);
+  }
+
+  &__group {
+    width: 100%;
+    margin-bottom: functions.rem(18);
+  }
+
+  &__field {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+
+    &-error {
+      color: var(--error);
+    }
+  }
+
+  &__input {
+    border: 1px solid var(--border-input);
+    border-radius: functions.rem(12);
+    width: 100%;
+    color: var(--primary-txt);
+    padding: functions.rem(25.5) functions.rem(14) functions.rem(8);
+
+    .form__field-error & {
+      background: rgba(214, 98, 98, 0.1);
+      border-color: var(--error);
+
+      & + .form__title {
+        color: var(--error);
+      }
+    }
+
+    &:focus,
+    .form__field-touched & {
+      + .form__title {
+        font-size: functions.rem(11);
+        line-height: functions.rem(13);
+        top: functions.rem(16);
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 28px;
+    left: 14px;
+    transform: translateY(-50%);
+    letter-spacing: functions.rem(-0.5);
+    color: var(--secondary-txt);
+    transition: all 0.2s linear;
+    cursor: text;
+  }
+
+  &__error {
+    display: flex;
+    color: var(--error);
+    font-weight: 400;
+    font-size: functions.rem(12.5);
+    line-height: calc(16 / 14);
+    margin-top: functions.rem(8);
+    letter-spacing: functions.rem(0.05);
+    transition: all 0.3s linear;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-image: url("../../assets/exclamationmarkcircle.svg");
+      background-size: 100% 100%;
+      margin-right: functions.rem(5);
+    }
+  }
+
+  &__forgot {
+    letter-spacing: functions.rem(-0.2);
+    color: var(--secondary-txt);
+    margin-bottom: functions.rem(30);
+
+    a {
+      color: var(--primary);
+    }
+  }
+}

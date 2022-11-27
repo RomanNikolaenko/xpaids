@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'verify',
     loadChildren: () => import('./verify/verify.module').then((m) => m.VerifyModule),
   },
+  {
+    path: 'recovery',
+    loadChildren: () => import('./recovery/recovery.module').then((m) => m.RecoveryModule),
+  },
 ];
 
 @NgModule({

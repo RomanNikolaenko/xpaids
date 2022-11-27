@@ -1,0 +1,79 @@
+<div class="recovery">
+  <div class="recovery__container container">
+    <header class="recovery__header">
+      <img
+        class="recovery__logo"
+        src="../../assets/xpaids-logo.svg"
+        width="98"
+        height="15"
+        alt="logo"
+      />
+
+      <a routerLink="/login" class="recovery__sign">Sign In</a>
+    </header>
+
+    <h1 class="recovery__title">Having trouble signing in?</h1>
+
+    <form
+      [formGroup]="recoveryForm"
+      (ngSubmit)="onSubmit()"
+      class="recovery__form form"
+    >
+      <p class="form__label">Enter your xPaids ID to get started.</p>
+
+      <fieldset class="form__group">
+        <label
+          [ngClass]="[
+            recoveryForm.get('id')?.dirty &&
+            recoveryForm.get('id')?.value != null &&
+            recoveryForm.get('id')?.value != ''
+              ? 'form__field-touched'
+              : '',
+
+            recoveryForm.get('id')?.errors && recoveryForm.get('id')?.dirty
+              ? 'form__field-error'
+              : ''
+          ]"
+          class="form__field"
+        >
+          <input type="text" formControlName="id" class="form__input" />
+          <span class="form__title">First name</span>
+          <span
+            *ngIf="
+              recoveryForm.get('id')?.errors && recoveryForm.get('id')?.dirty
+            "
+            class="form__error"
+            >Enter your xPaids ID</span
+          >
+        </label>
+      </fieldset>
+
+      <div class="form__forgot">
+        If you forgot your xPaids ID, you can <a href="/">look it up.</a>
+      </div>
+
+      <button
+        class="btn btn__continue"
+        type="submit"
+        [disabled]="recoveryForm.invalid"
+      >
+        Continue
+      </button>
+    </form>
+
+    <footer class="recovery__footer">
+      <img
+        src="../../assets/profile.svg"
+        width="54"
+        height="54"
+        alt="profile"
+      />
+
+      <p class="recovery__description">
+        You’ve come to the right place to reset a forgotten password. For your
+        security, we’ll ask you a few questions to verify that you’re the owner
+        of this account.
+      </p>
+    </footer>
+  </div>
+</div>
