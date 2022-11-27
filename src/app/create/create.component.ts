@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ModalService } from './verify-email/verify-email.service';
+import { ModalService } from '../components/modal/modal.service';
 
 @Component({
   selector: 'app-create',

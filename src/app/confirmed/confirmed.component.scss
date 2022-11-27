@@ -1,3 +1,4 @@
+@forward "../../assets/styles/email-pages";
 @use "../../assets/styles/functions" as functions;
 
 .container {
@@ -20,29 +21,8 @@
 .confirmed {
   padding: functions.rem(70) var(--padding);
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: functions.rem(50);
-    width: 100%;
-
-    img {
-      &:nth-of-type(1) {
-        width: 157px;
-      }
-
-      &:nth-of-type(2) {
-        width: 24px;
-        height: 24px;
-      }
-    }
   }
 
   &__done {
@@ -54,21 +34,7 @@
   }
 
   &__title {
-    font-weight: 400;
-    font-size: functions.rem(40);
-    line-height: calc(48 / 40);
-    color: var(--primary-txt);
     margin-bottom: functions.rem(16);
-    letter-spacing: functions.rem(-0.6);
-
-    @media (max-width: 639.98px) {
-      font-size: functions.rem(34);
-    }
-
-    @media (max-width: 479.98px) {
-      font-size: functions.rem(24);
-      letter-spacing: functions.rem(-0.4);
-    }
   }
 
   &__btn {
@@ -89,22 +55,7 @@
   }
 
   &__copyright {
-    width: 100%;
-    text-align: center;
-    padding: functions.rem(18) functions.rem(24);
-    background: #f8f8f8;
-    font-weight: 300;
-    font-size: functions.rem(11);
-    line-height: calc(13 / 11);
-    letter-spacing: functions.rem(-0.3);
-    color: var(--secondary-txt);
     margin-top: functions.rem(40);
     margin-bottom: functions.rem(27);
-  }
-
-  &__company {
-    font-weight: 500;
-    letter-spacing: functions.rem(-0.2);
-    font-size: functions.rem(16);
   }
 }

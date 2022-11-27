@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ModalService } from './verify-email.service';
+import { ModalService } from './modal.service';
 
 @Component({
-  selector: 'app-verify-email',
-  templateUrl: './verify-email.component.html',
-  styleUrls: ['./verify-email.component.scss'],
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class VerifyEmailComponent implements OnInit, OnDestroy {
+export class ModalComponent implements OnInit, OnDestroy {
   display$: Observable<'open' | 'close'> | undefined;
 
   constructor(private modalService: ModalService) {}
