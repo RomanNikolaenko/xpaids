@@ -126,8 +126,7 @@ h4 {
 .checkmark {
   font-size: 14.5px;
   line-height: calc(18 / 14.5);
-  letter-spacing: -0.2px;
-  margin-bottom: 15px;
+  letter-spacing: -0.25px;
   cursor: pointer;
 
   &__checkbox {
@@ -136,7 +135,6 @@ h4 {
     display: inline-block;
     width: 14px;
     height: 14px;
-    margin-right: 6.5px;
     border: 0.5px solid rgba(0, 0, 0, 0.12);
     border-radius: 3px;
     cursor: pointer;
