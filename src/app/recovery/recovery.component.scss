@@ -1,37 +1,32 @@
-@use "../../assets/styles/functions" as functions;
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 640px) {
-    max-width: 488px;
-  }
-
-  @media (min-width: 960px) {
-    max-width: 490px;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 510px;
-  }
-}
-
 .recovery {
   &__container {
-    padding: functions.rem(70) functions.rem(20);
+    padding: 70px 20px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 640px) {
+      max-width: 488px;
+    }
+
+    @media (min-width: 960px) {
+      max-width: 490px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 510px;
+    }
   }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: functions.rem(12);
-    margin-bottom: functions.rem(50);
+    gap: 12px;
+    margin-bottom: 50px;
   }
 
   &__logo {
-    width: functions.rem(98);
+    width: 98px;
   }
 
   &__sign {
@@ -40,40 +35,40 @@
 
   &__title {
     font-weight: 600;
-    font-size: functions.rem(34);
+    font-size: 34px;
     line-height: calc(41 / 34);
-    margin-bottom: functions.rem(30);
+    margin-bottom: 30px;
   }
 
   &__footer {
     display: grid;
-    grid-template-columns: functions.rem(54) 1fr;
-    gap: functions.rem(24);
-    padding-top: functions.rem(20);
+    grid-template-columns: 54px 1fr;
+    gap: 24px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-input);
   }
 
   &__description {
-    font-size: functions.rem(13);
+    font-size: 13px;
     line-height: calc(18 / 13);
-    letter-spacing: functions.rem(-0.2);
+    letter-spacing: -0.2px;
     color: var(--secondary-txt);
   }
 }
 
 .form {
-  margin-bottom: functions.rem(40);
+  margin-bottom: 40px;
 
   &__label {
-    font-size: functions.rem(13);
+    font-size: 13px;
     line-height: calc(16 / 13);
-    margin-bottom: functions.rem(12);
+    margin-bottom: 12px;
     color: var(--secondary-txt);
   }
 
   &__group {
     width: 100%;
-    margin-bottom: functions.rem(18);
+    margin-bottom: 18px;
   }
 
   &__field {
@@ -89,10 +84,10 @@
 
   &__input {
     border: 1px solid var(--border-input);
-    border-radius: functions.rem(12);
+    border-radius: 12px;
     width: 100%;
     color: var(--primary-txt);
-    padding: functions.rem(25.5) functions.rem(14) functions.rem(8);
+    padding: 25.5px 14px 8px;
 
     .form__field-error & {
       background: rgba(214, 98, 98, 0.1);
@@ -106,9 +101,9 @@
     &:focus,
     .form__field-touched & {
       + .form__title {
-        font-size: functions.rem(11);
-        line-height: functions.rem(13);
-        top: functions.rem(16);
+        font-size: 11px;
+        line-height: 13px;
+        top: 16px;
       }
     }
   }
@@ -118,7 +113,7 @@
     top: 28px;
     left: 14px;
     transform: translateY(-50%);
-    letter-spacing: functions.rem(-0.5);
+    letter-spacing: -0.5px;
     color: var(--secondary-txt);
     transition: all 0.2s linear;
     cursor: text;
@@ -128,10 +123,10 @@
     display: flex;
     color: var(--error);
     font-weight: 400;
-    font-size: functions.rem(12.5);
+    font-size: 12.5px;
     line-height: calc(16 / 14);
-    margin-top: functions.rem(8);
-    letter-spacing: functions.rem(0.05);
+    margin-top: 8px;
+    letter-spacing: 0.05px;
     transition: all 0.3s linear;
 
     &::before {
@@ -141,14 +136,14 @@
       height: 12px;
       background-image: url("../../assets/exclamationmarkcircle.svg");
       background-size: 100% 100%;
-      margin-right: functions.rem(5);
+      margin-right: 5px;
     }
   }
 
   &__forgot {
-    letter-spacing: functions.rem(-0.2);
+    letter-spacing: -0.2px;
     color: var(--secondary-txt);
-    margin-bottom: functions.rem(30);
+    margin-bottom: 30px;
 
     a {
       color: var(--primary);

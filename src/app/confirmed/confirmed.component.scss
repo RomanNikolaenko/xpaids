@@ -1,28 +1,27 @@
 @forward "../../assets/styles/email-pages";
-@use "../../assets/styles/functions" as functions;
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-
-  @media (min-width: 640px) {
-    max-width: 448px;
-  }
-
-  @media (min-width: 960px) {
-    max-width: 450px;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 470px;
-  }
-}
 
 .confirmed {
-  padding: functions.rem(70) var(--padding);
+  padding: 70px var(--padding);
+
+  &__container {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 640px) {
+      max-width: 448px;
+    }
+
+    @media (min-width: 960px) {
+      max-width: 450px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 470px;
+    }
+  }
 
   &__header {
-    margin-bottom: functions.rem(50);
+    margin-bottom: 50px;
   }
 
   &__done {
@@ -30,32 +29,32 @@
     width: 48px;
     height: 48px;
     margin: 0 auto;
-    margin-bottom: functions.rem(30);
+    margin-bottom: 30px;
   }
 
   &__title {
-    margin-bottom: functions.rem(16);
+    margin-bottom: 16px;
   }
 
   &__btn {
-    padding: functions.rem(8) functions.rem(14);
+    padding: 8px 14px;
   }
 
   &__subtitle {
-    font-size: functions.rem(15);
+    font-size: 15px;
     line-height: calc(18 / 15);
     color: var(--secondary);
-    margin-bottom: functions.rem(40);
+    margin-bottom: 40px;
     text-align: center;
-    letter-spacing: functions.rem(-0.2);
+    letter-spacing: -0.2px;
 
     @media (max-width: 479.98px) {
-      font-size: functions.rem(13);
+      font-size: 13px;
     }
   }
 
   &__copyright {
-    margin-top: functions.rem(40);
-    margin-bottom: functions.rem(27);
+    margin-top: 40px;
+    margin-bottom: 27px;
   }
 }

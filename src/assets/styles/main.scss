@@ -18,18 +18,41 @@
 
 @import "./fonts";
 @import "./reset";
-@import "./functions";
+
+h1 {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: calc(41 / 34);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 27px;
+  line-height: calc(32 / 27);
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: calc(20 / 17);
+}
 
 .btn {
   position: relative;
   isolation: isolate;
   font-weight: 500;
-  letter-spacing: rem(-0.3);
+  letter-spacing: -0.3px;
   text-align: center;
-  padding: rem(4) rem(14);
-  border-radius: rem(20);
+  padding: 4px 14px;
+  border-radius: 20px;
   overflow: hidden;
-  min-width: rem(98);
+  min-width: 98px;
 
   &__cancel {
     background-color: #ececec;
@@ -91,11 +114,56 @@
   border-radius: 8px;
   font-weight: 400;
   font-size: 13px;
-  line-height: 16px;
+  line-height: calc(16 / 13);
   letter-spacing: -0.2px;
   text-align: center;
   color: var(--secondary-txt);
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s linear;
+}
+
+.checkmark {
+  font-size: 14.5px;
+  line-height: calc(18 / 14.5);
+  letter-spacing: -0.2px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &__checkbox {
+    position: relative;
+    top: 1.5px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 6.5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.5px;
+      left: -0.5px;
+      width: calc(100% + 1px);
+      height: calc(100% + 1px);
+      background-image: url("../../assets/Checkbox.svg");
+      background-size: 100% 100%;
+      opacity: 0;
+      transition: opacity 0.2s linear;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      & + i {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

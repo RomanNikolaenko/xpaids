@@ -1,5 +1,4 @@
 @forward "../../assets/styles/email-pages";
-@use "../../assets/styles/functions" as functions;
 
 .container {
   width: 100%;
@@ -21,14 +20,14 @@
   justify-content: center;
   flex: 1;
   background-color: var(--primary-txt);
-  padding: functions.rem(20) var(--padding);
+  padding: 20px var(--padding);
 
   &__container {
     width: 100%;
     max-width: 598px;
     margin: 0 auto;
-    border-radius: functions.rem(8);
-    padding: functions.rem(70) var(--padding) functions.rem(68);
+    border-radius: 8px;
+    padding: 70px var(--padding) 68px;
     background-color: var(--white);
 
     @media (min-width: 960px) {
@@ -41,36 +40,36 @@
   }
 
   &__header {
-    margin-bottom: functions.rem(50);
+    margin-bottom: 50px;
   }
 
   &__hi {
     font-weight: 600;
     text-align: center;
-    letter-spacing: functions.rem(-0.2);
-    margin-bottom: functions.rem(16);
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
   }
 
   &__title {
-    margin-bottom: functions.rem(30);
+    margin-bottom: 30px;
   }
 
   &__subtitle {
     font-weight: 400;
-    font-size: functions.rem(15);
+    font-size: 15px;
     line-height: calc(18 / 15);
     text-align: center;
-    letter-spacing: functions.rem(-0.3);
-    margin-bottom: functions.rem(24);
+    letter-spacing: -0.3px;
+    margin-bottom: 24px;
 
     &:nth-of-type(2) {
-      margin-bottom: functions.rem(17);
+      margin-bottom: 17px;
     }
 
     &:nth-of-type(3) {
       color: var(--secondary-input);
-      font-size: functions.rem(13.1);
-      margin-bottom: functions.rem(23);
+      font-size: 13.1px;
+      margin-bottom: 23px;
     }
 
     span {
@@ -82,27 +81,27 @@
 
   &__password {
     background-image: var(--bg1);
-    border-radius: functions.rem(15);
+    border-radius: 15px;
     font-weight: 700;
-    font-size: functions.rem(40);
+    font-size: 40px;
     line-height: calc(48 / 40);
     color: var(--white);
-    padding: functions.rem(18) functions.rem(24);
-    letter-spacing: functions.rem(7);
-    margin-bottom: functions.rem(11);
+    padding: 18px 24px;
+    letter-spacing: 7px;
+    margin-bottom: 11px;
 
     @media (max-width: 479.98px) {
-      font-size: functions.rem(24);
+      font-size: 24px;
       line-height: calc(29 / 24);
-      padding: functions.rem(18) functions.rem(11);
+      padding: 18px 11px;
     }
   }
 
   &__copyright {
-    margin-bottom: functions.rem(27);
+    margin-bottom: 27px;
 
     @media (max-width: 479.98px) {
-      padding: functions.rem(18);
+      padding: 18px;
     }
   }
 }
@@ -113,12 +112,12 @@
   &__title {
     position: relative;
     font-weight: 400;
-    font-size: functions.rem(13);
+    font-size: 13px;
     line-height: calc(18 / 15);
-    letter-spacing: functions.rem(-0.25);
+    letter-spacing: -0.25px;
     text-align: center;
     color: var(--secondary-txt);
-    margin-bottom: functions.rem(25);
+    margin-bottom: 25px;
 
     &::before {
       content: "";
@@ -135,7 +134,7 @@
       isolation: isolate;
       display: inline-block;
       background-color: var(--white);
-      padding: 0 functions.rem(24);
+      padding: 0 24px;
     }
 
     a {
