@@ -71,6 +71,7 @@ h4 {
       right: 0;
       bottom: 0;
       z-index: -1;
+      border-radius: inherit;
       transition: inherit;
     }
 
@@ -84,6 +85,12 @@ h4 {
       opacity: 0;
     }
 
+    &:disabled {
+      &::before {
+        opacity: 0.4;
+      }
+    }
+
     @media (hover) {
       &:enabled {
         &:hover {
@@ -91,12 +98,6 @@ h4 {
             opacity: 1;
           }
         }
-      }
-    }
-
-    &:disabled {
-      &::before {
-        opacity: 0.4;
       }
     }
 
