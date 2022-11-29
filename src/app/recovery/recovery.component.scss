@@ -98,6 +98,10 @@
       }
     }
 
+    &:focus {
+      border-color: var(--border-active);
+    }
+
     &:focus,
     .form__field-touched & {
       + .form__title {
@@ -114,7 +118,7 @@
     left: 14px;
     transform: translateY(-50%);
     letter-spacing: -0.5px;
-    color: var(--secondary-txt);
+    color: var(--secondary-input);
     transition: all 0.2s linear;
     cursor: text;
   }
@@ -134,7 +138,7 @@
       display: block;
       width: 12px;
       height: 12px;
-      background-image: url("../../assets/exclamationmarkcircle.svg");
+      background-image: url("../../assets/images/exclamationmarkcircle.svg");
       background-size: 100% 100%;
       margin-right: 5px;
     }

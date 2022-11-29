@@ -1,27 +1,35 @@
-@forward "../../assets/styles/email-pages";
-
 .confirmed {
   padding: 70px var(--padding);
 
   &__container {
     width: 100%;
     margin: 0 auto;
-
-    @media (min-width: 640px) {
-      max-width: 448px;
-    }
-
-    @media (min-width: 960px) {
-      max-width: 450px;
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 470px;
-    }
+    max-width: 960px;
   }
 
   &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 50px;
+  }
+
+  &__logo {
+    width: 217px;
+  }
+
+  &__img {
+    width: 28px;
+    height: 28px;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-txt);
+    border-radius: 20px;
+    padding: 50px 15px;
   }
 
   &__done {
@@ -33,28 +41,78 @@
   }
 
   &__title {
-    margin-bottom: 16px;
-  }
+    font-weight: 700;
+    font-size: 40px;
+    line-height: calc(48 / 40);
+    text-align: center;
+    color: var(--white);
+    max-width: 450px;
+    margin: 0 auto 16px;
 
-  &__btn {
-    padding: 8px 14px;
+    @media (max-width: 639.98px) {
+      font-size: 34px;
+      line-height: calc(41 / 34);
+      max-width: 370px;
+    }
+
+    @media (max-width: 479.98px) {
+      font-size: 24px;
+      line-height: calc(29 / 24);
+      margin-bottom: 17px;
+    }
   }
 
   &__subtitle {
     font-size: 15px;
     line-height: calc(18 / 15);
-    color: var(--secondary);
+    color: var(--secondary-input);
     margin-bottom: 40px;
     text-align: center;
     letter-spacing: -0.2px;
 
     @media (max-width: 479.98px) {
       font-size: 13px;
+      line-height: calc(16 / 13);
+    }
+  }
+
+  &__timer {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: calc(48 / 40);
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--white);
+
+    @media (max-width: 639.98px) {
+      font-size: 34px;
+      line-height: calc(41 / 34);
+    }
+
+    @media (max-width: 479.98px) {
+      font-size: 24px;
+      line-height: calc(29 / 24);
     }
   }
 
   &__copyright {
+    font-weight: 300;
+    font-size: 11px;
+    line-height: calc(13 / 11);
+    letter-spacing: -0.3px;
+    color: var(--secondary-txt);
+    text-align: center;
     margin-top: 40px;
-    margin-bottom: 27px;
+    margin-bottom: 36px;
+
+    @media (max-width: 479.98px) {
+      margin-top: 39px;
+      margin-bottom: 37px;
+    }
+  }
+
+  &__company {
+    font-size: 16px;
+    color: var(--white);
   }
 }

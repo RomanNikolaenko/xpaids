@@ -2,7 +2,7 @@
   <div class="create-account__container">
     <img
       class="create-account__img"
-      src="../../assets/logo.svg"
+      src="../../assets/images/logo.svg"
       width="48"
       height="48"
       alt="logo"
@@ -38,7 +38,9 @@
             createForm.get('firstName')?.errors &&
             createForm.get('firstName')?.dirty
               ? 'form__field-error'
-              : ''
+              : '',
+
+              createForm.get('firstName')?.valid ? 'form__field-valid' : ''
           ]"
           class="form__field"
         >
@@ -70,7 +72,9 @@
             createForm.get('lastName')?.errors &&
             createForm.get('lastName')?.dirty
               ? 'form__field-error'
-              : ''
+              : '',
+
+              createForm.get('lastName')?.valid ? 'form__field-valid' : ''
           ]"
           class="form__field"
         >
@@ -101,7 +105,9 @@
 
             createForm.get('email')?.errors && createForm.get('email')?.dirty
               ? 'form__field-error'
-              : ''
+              : '',
+
+              createForm.get('email')?.valid ? 'form__field-valid' : ''
           ]"
           class="form__field"
         >
@@ -133,7 +139,9 @@
             createForm.get('password')?.errors &&
             createForm.get('password')?.dirty
               ? 'form__field-error'
-              : ''
+              : '',
+
+              createForm.get('password')?.valid ? 'form__field-valid' : ''
           ]"
           class="form__field"
         >
@@ -165,7 +173,9 @@
             createForm.get('passwordConfirm')?.errors &&
             createForm.get('passwordConfirm')?.dirty
               ? 'form__field-error'
-              : ''
+              : '',
+
+              createForm.get('passwordConfirm')?.valid ? 'form__field-valid' : ''
           ]"
           class="form__field"
         >
@@ -239,7 +249,7 @@
       </label>
 
       <button
-        class="btn btn__continue"
+        class="btn btn__large btn__blue"
         type="submit"
         (click)="openModal()"
         [disabled]="createForm.invalid"
@@ -254,7 +264,7 @@
   <div class="modal-email__container">
     <img
       class="modal-email__img"
-      src="../../assets//email.svg"
+      src="../../assets/images//email.svg"
       width="65"
       height="51"
       alt="email"
@@ -313,7 +323,7 @@
         <button class="btn btn__cancel" (click)="closeModal()">
           <span>Cancel</span>
         </button>
-        <button disabled class="btn btn__continue">
+        <button disabled class="btn btn__small btn__blue">
           <span>Continue</span>
         </button>
       </div>

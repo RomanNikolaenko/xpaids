@@ -1,35 +1,42 @@
-<div class="confirmed email">
-  <div class="email__container confirmed__container">
-    <div class="email__header confirmed__header">
+<div class="confirmed">
+  <div class="confirmed__container">
+    <header class="confirmed__header">
       <img
-        src="../../assets/xpaids.svg"
-        width="157"
-        height="15"
+      class="confirmed__logo"
+        src="../../assets/images/xpaids.svg"
+        width="217"
+        height="21"
         alt="logo xpaids"
       />
-      <img src="../../assets/logo.svg" width="24" height="24" alt="logo" />
+      <img class="confirmed__img" src="../../assets/images/logo.svg" width="28" height="28" alt="logo" />
+    </header>
+
+    <div class="confirmed__wrap">
+      <img
+        class="confirmed__done"
+        src="../../assets/images/done.svg"
+        width="48"
+        height="48"
+        alt="done"
+      />
+
+      <h1 class="confirmed__title">Your xPaids ID Confirmed!</h1>
+
+      <p class="confirmed__subtitle">
+        This page will close automatically after 10 sec.
+      </p>
+
+      <p class="confirmed__timer">8</p>
+
+      <button class="confirmed__btn btn btn__large btn__blue" routerLink="/">
+        <span>Go xPaids</span>
+      </button>
+
+      <div class="confirmed__copyright">
+        xPaids Inc. Copyright 2023. All right reserved.
+      </div>
+
+      <a href="/" class="confirmed__company">xpaids.com</a>
     </div>
-
-    <img
-      class="confirmed__done"
-      src="../../assets/done.svg"
-      width="48"
-      height="48"
-      alt="done"
-    />
-
-    <h1 class="email__title verify__title">Your xPaids ID Confirmed!</h1>
-
-    <p class="confirmed__subtitle">
-      This page will close automatically after 10 sec.
-    </p>
-
-    <button class="confirmed__btn btn btn__continue" routerLink="/">Go to xPaids</button>
-
-    <div class="email__copyright confirmed__copyright">
-      xPaids Inc. Copyright 2023. All right reserved.
-    </div>
-
-    <a href="/" class="email__company">xpaids.com</a>
   </div>
 </div>
