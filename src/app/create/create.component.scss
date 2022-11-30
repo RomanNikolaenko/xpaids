@@ -5,7 +5,7 @@
     align-items: center;
 
     width: 100%;
-    padding: 40px var(--padding);
+    padding: 50px var(--padding);
     margin: 0 auto;
 
     @media (min-width: 480px) {
@@ -14,6 +14,7 @@
 
     @media (min-width: 640px) {
       max-width: 484px;
+      padding: 70px var(--padding) 58px;
     }
 
     @media (min-width: 960px) {
@@ -30,11 +31,7 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-bottom: 29px;
-
-    @media (max-width: 639.98px) {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 30px;
   }
 
   &__description {
@@ -47,7 +44,11 @@
   &__img {
     width: 48px;
     height: 48px;
-    margin-bottom: 51px;
+    margin-bottom: 50px;
+
+    @media (max-width: 639.98px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -80,7 +81,7 @@
     }
 
     @media (min-width: 1200px) {
-      margin-bottom: 31px;
+      margin-bottom: 32px;
     }
   }
 
@@ -96,15 +97,16 @@
 
     &-valid {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 19px;
         right: 14px;
         width: 18px;
         height: 18px;
-        background-image: url('../../assets/images/done.svg');
+        background-image: url("../../assets/images/done.svg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        pointer-events: none;
       }
     }
 
@@ -188,12 +190,8 @@
   &__login {
     letter-spacing: -0.45px;
     font-size: 15px;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
     text-align: center;
-
-    @media (max-width: 1199.98px) {
-      margin-bottom: 16px;
-    }
   }
 
   &__checkmark {

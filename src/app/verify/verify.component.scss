@@ -1,4 +1,4 @@
-@forward "../../assets/images/styles/email-pages";
+@forward "../../assets/styles/email-pages";
 
 .container {
   width: 100%;
@@ -27,8 +27,12 @@
     max-width: 598px;
     margin: 0 auto;
     border-radius: 8px;
-    padding: 70px var(--padding) 68px;
+    padding: 50px var(--padding);
     background-color: var(--white);
+
+    @media (min-width: 640px) {
+      padding: 70px var(--padding) 68px;
+    }
 
     @media (min-width: 960px) {
       max-width: 684px;
@@ -40,7 +44,11 @@
   }
 
   &__header {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @media (min-width: 640px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__hi {
@@ -87,7 +95,7 @@
     line-height: calc(48 / 40);
     color: var(--white);
     padding: 18px 24px;
-    letter-spacing: 7px;
+    letter-spacing: 0.15em;
     margin-bottom: 11px;
 
     @media (max-width: 479.98px) {

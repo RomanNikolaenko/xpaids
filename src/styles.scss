@@ -4,7 +4,9 @@ app-root,
 app-login,
 app-create,
 app-confirmed,
-app-verify {
+app-verify,
+app-error,
+app-recovery {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -13,6 +15,8 @@ app-verify {
 app-login,
 app-create,
 app-confirmed,
-app-verify {
+app-verify,
+app-error,
+app-recovery {
   justify-content: center;
 }

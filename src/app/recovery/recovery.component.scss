@@ -1,10 +1,11 @@
 .recovery {
   &__container {
-    padding: 70px 20px;
+    padding: 50px 20px;
     width: 100%;
     margin: 0 auto;
 
     @media (min-width: 640px) {
+      padding: 70px 20px;
       max-width: 488px;
     }
 
@@ -22,7 +23,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @media (min-width: 640px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__logo {

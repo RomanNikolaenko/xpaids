@@ -1,12 +1,12 @@
-.confirmed {
+.error {
   &__container {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 70px var(--padding);
-
-    @media (max-width: 639.98px) {
-      padding: 50px var(--padding);
+    padding: 50px var(--padding);
+    
+    @media (min-width: 640px) {
+      padding: 70px var(--padding);
     }
   }
 
@@ -34,38 +34,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--primary-txt);
-    border-radius: 20px;
-    padding: 50px 15px;
   }
 
-  &__done {
-    display: block;
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+  &__404 {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: calc(115 / 96);
+    margin-bottom: 16px;
+
+    @media (max-width: 639.98px) {
+      font-size: 72px;
+    }
   }
 
   &__title {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 40px;
     line-height: calc(48 / 40);
+    letter-spacing: -0.7px;
     text-align: center;
-    color: var(--white);
-    max-width: 450px;
-    margin: 0 auto 16px;
+    max-width: 510px;
+    margin-bottom: 16px;
+
+    @media (max-width: 1199.98px) {
+      max-width: 450px;
+    }
 
     @media (max-width: 639.98px) {
       font-size: 34px;
       line-height: calc(41 / 34);
-      max-width: 370px;
     }
 
     @media (max-width: 479.98px) {
       font-size: 24px;
       line-height: calc(29 / 24);
       margin-bottom: 17px;
+      letter-spacing: -0.4px;
     }
   }
 
@@ -80,25 +84,6 @@
     @media (max-width: 479.98px) {
       font-size: 13px;
       line-height: calc(16 / 13);
-    }
-  }
-
-  &__timer {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: calc(48 / 40);
-    margin-bottom: 40px;
-    text-align: center;
-    color: var(--white);
-
-    @media (max-width: 639.98px) {
-      font-size: 34px;
-      line-height: calc(41 / 34);
-    }
-
-    @media (max-width: 479.98px) {
-      font-size: 24px;
-      line-height: calc(29 / 24);
     }
   }
 
@@ -120,6 +105,6 @@
 
   &__company {
     font-size: 16px;
-    color: var(--white);
+    font-weight: 600;
   }
 }
