@@ -109,13 +109,8 @@
     letter-spacing: -0.3px;
     color: var(--secondary-txt);
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 36px;
-
-    @media (max-width: 479.98px) {
-      margin-top: 39px;
-      margin-bottom: 37px;
-    }
+    margin-top: 39px;
+    margin-bottom: 37px;
   }
 
   &__company {
